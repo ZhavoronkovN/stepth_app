@@ -1,0 +1,3 @@
+{
+    "files": ["../stepth-protos/stepth.proto","ControlBlockPixels.qml","MyButton.qml","ControlBlockMask.qml","main.qml","stepth_client.py","main.py","MyTextButton.qml","ControlBlockImage.qml","ControlBlockDepth.qml","logic.py","build.sh"]
+}

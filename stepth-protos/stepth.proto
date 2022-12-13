@@ -1,0 +1,63 @@
+syntax = "proto3";
+package stepth_service;
+
+enum CutDepthTypes {
+	Custom = 0;
+	Front2 = 1;
+	Back2 = 2;
+	Front3 = 3;
+	Middle3 = 4;
+	Back3 = 5;
+}
+
+service StepthService {
+    rpc Beep (EmptyRequest) returns (StringResponse);
+    rpc LoadImage (LoadImageRequest) returns (stream ImageResponse);
+	rpc LoadImageToCurrent (LoadImageRequest) returns (stream ImageResponse);
+	rpc LoadDepth (LoadImageRequest) returns (StringResponse);
+	rpc LoadDepthFromAdditional (LoadImageRequest) returns (StringResponse);
+    rpc HighlightDepth (HighlightRequest) returns (stream ImageResponse);
+	rpc InvertDepth(EmptyRequest) returns (StringResponse);
+    rpc HighlightMask (HighlightRequest) returns (stream ImageResponse);
+	rpc InvertMask(EmptyRequest) returns (StringResponse);
+	rpc CutDepth (CutDepthRequest) returns (StringResponse);
+	rpc ImageMod (ImageModRequest) returns (stream ImageResponse);
+	rpc SaveImage (ImageSaveRequest) returns (StringResponse);
+	rpc SaveDepth (ImageSaveRequest) returns (StringResponse);
+	rpc SaveMask (ImageSaveRequest) returns (StringResponse);
+}
+
+message EmptyRequest {}
+message StringResponse {
+	string message = 1;
+}
+
+message LoadImageRequest {
+	string path = 1;
+}
+
+message ImageResponse {
+	bytes rawData = 1;
+}
+
+message HighlightRequest {
+	bool enabled = 1;
+}
+
+message CutDepthRequest {
+	CutDepthTypes cutType = 1;
+    int32 cutFrom = 2;
+    int32 cutTo = 3;
+}
+
+message ImageModRequest {
+	bool preview = 1;
+	int32 brightness = 2;
+	int32 contrast = 3;
+	int32 sharpness = 4;
+}
+
+message ImageSaveRequest {
+	string path = 1;
+	bool byMask = 2;
+}
