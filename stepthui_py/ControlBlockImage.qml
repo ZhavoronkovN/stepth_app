@@ -8,6 +8,8 @@ Column {
     property string mainColor
     property string secondColor
     property string actionColor
+    property string mainTextColor
+    property string additionalTextColor
     signal imageLoadReplace(string path)
     signal imageLoadAdd(string path)
     MyTextButton {
@@ -15,6 +17,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load image and replace"
         action: () => {
                     fileDialog.action = () => root.imageLoadReplace(
@@ -28,6 +32,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load image and add to current by mask"
         action: () => {
                     fileDialog.action = () => root.imageLoadAdd(
@@ -41,6 +47,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save image ignoring mask"
     }
 
@@ -49,6 +57,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save image by mask"
     }
 

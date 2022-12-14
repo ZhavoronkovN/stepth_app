@@ -9,6 +9,8 @@ MouseArea {
     property string mainColor : "white"
     property string hoverColor : "white"
     property string pressedColor : "white"
+    property string mainTextColor : "black"
+    property string additionalTextColor : "white"
     property string currentColor : mainColor
     property string text : "Button text"
     property var action: () => {}
@@ -44,7 +46,9 @@ MouseArea {
             anchors.fill : parent
             horizontalAlignment : Text.AlignHCenter
             verticalAlignment : Text.AlignVCenter
-            text : root.text }
+            text : root.text
+            color: root.currentColor === root.mainColor ? root.mainTextColor : root.additionalTextColor
+        }
     }
 }
 

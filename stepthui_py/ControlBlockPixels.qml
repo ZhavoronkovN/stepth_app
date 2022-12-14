@@ -8,6 +8,8 @@ Column {
     property string mainColor
     property string secondColor
     property string actionColor
+    property string mainTextColor
+    property string additionalTextColor
     signal imageModified(bool preview, int brightness, int contrast, int sharpness)
     height : 200
     Row {
@@ -133,6 +135,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Reset"
             action : () => root.imageModified(true, 0,0,0)
         }
@@ -142,6 +146,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Preview"
         action : () => root.imageModified(true, Math.round(sliderBrightness.value),Math.round(sliderContrast.value),Math.round(sliderSharpness.value))
     }
@@ -151,6 +157,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Apply"
         action : () => root.imageModified(false, Math.round(sliderBrightness.value),Math.round(sliderContrast.value),Math.round(sliderSharpness.value))
     }

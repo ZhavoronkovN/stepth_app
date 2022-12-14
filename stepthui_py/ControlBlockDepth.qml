@@ -8,6 +8,8 @@ Column {
     property string mainColor
     property string secondColor
     property string actionColor
+    property string mainTextColor
+    property string additionalTextColor
     signal depthLoad(string path)
     signal depthLoadAdd(string path)
     signal depthInvert
@@ -19,6 +21,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load depth"
         action: () => {
                     fileDialog.action = () => root.depthLoad(
@@ -32,6 +36,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load depth from additional image"
         action: () => {
                     fileDialog.action = () => root.depthLoadAdd(
@@ -45,6 +51,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Invert depth"
         action: () => root.depthInvert()
     }
@@ -58,6 +66,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select foreground"
             action : () => root.depthSelect(1)
         }
@@ -68,6 +78,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select background"
             action : () => root.depthSelect(2)
         }
@@ -82,6 +94,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select foreground"
             action : () => root.depthSelect(3)
         }
@@ -92,6 +106,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select middleground"
             action : () => root.depthSelect(4)
         }
@@ -102,6 +118,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select background"
             action : () => root.depthSelect(5)
         }
@@ -112,6 +130,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         toggle : true
         text: "Show depth"
         action: (show) => root.depthShow(show)
@@ -200,6 +220,8 @@ Column {
             mainColor: root.mainColor
             hoverColor: root.secondColor
             pressedColor: root.actionColor
+            mainTextColor: root.mainTextColor
+            additionalTextColor: root.additionalTextColor
             text: "Select slice"
             action : () => root.depthSelectSlice(Math.round(parseFloat(depthSlider.first.value)), Math.round(parseFloat(depthSlider.second.value)))
         }
@@ -210,6 +232,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save depth to file"
     }
 

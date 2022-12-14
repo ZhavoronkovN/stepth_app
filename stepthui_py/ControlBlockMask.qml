@@ -8,6 +8,8 @@ Column {
     property string mainColor
     property string secondColor
     property string actionColor
+    property string mainTextColor
+    property string additionalTextColor
     signal maskLoad(string path)
     signal maskShow(bool show)
     signal maskInvert()
@@ -17,6 +19,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load mask"
         action: () => {
                     fileDialog.action = () => root.maskLoad(
@@ -29,6 +33,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         toggle : true
         text: "Show mask"
         action: (show) => root.maskShow(show)
@@ -38,6 +44,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Reset mask"
     }
     MyTextButton {
@@ -45,6 +53,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Invert mask"
         action: ()=>root.maskInvert()
     }
@@ -54,6 +64,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load and add to current"
     }
 
@@ -62,6 +74,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load and remove from current"
     }
 
@@ -70,6 +84,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load and intersect"
     }
     MyTextButton {
@@ -77,6 +93,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save mask to file"
     }
 
@@ -85,6 +103,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Load image and add to current by mask"
     }
 
@@ -93,6 +113,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save image ignoring mask"
     }
 
@@ -101,6 +123,8 @@ Column {
         mainColor: root.mainColor
         hoverColor: root.secondColor
         pressedColor: root.actionColor
+        mainTextColor: root.mainTextColor
+        additionalTextColor: root.additionalTextColor
         text: "Save image by mask"
     }
 

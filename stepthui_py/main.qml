@@ -8,10 +8,11 @@ ApplicationWindow {
     height: 480
     visible: true
     title: qsTr("")
-    property string mainColor: "#edf2f4"
-    property string secondColor: "#8d99ae"
-    property string actionColor: "#2b2d42"
-    property string textColor: secondColor
+    property string mainColor: "#e6e8e6"
+    property string secondColor: "#7de2d1"
+    property string actionColor: "#339989"
+    property string textColor: "#131515"
+    property string secondTextColor: "#2b2c28"
     property double rootOpacity: 1
     color: mainColor
     Rectangle {
@@ -124,6 +125,8 @@ ApplicationWindow {
             mainColor: root.mainColor
             secondColor: root.secondColor
             actionColor: root.actionColor
+            mainTextColor : root.textColor
+            additionalTextColor : root.secondTextColor
             onImageLoadReplace: (path) => logic.loadMainImage(path)
             onImageLoadAdd: (path) => logic.loadImageAdd(path)
         }
@@ -134,6 +137,8 @@ ApplicationWindow {
             mainColor: root.mainColor
             secondColor: root.secondColor
             actionColor: root.actionColor
+            mainTextColor : root.textColor
+            additionalTextColor : root.secondTextColor
             onDepthLoad: (path) => logic.loadDepth(path)
             onDepthLoadAdd: (path) => logic.loadDepthFromAdd(path)
             onDepthShow: (show) => logic.showDepth(show)
@@ -148,6 +153,8 @@ ApplicationWindow {
             mainColor: root.mainColor
             secondColor: root.secondColor
             actionColor: root.actionColor
+            mainTextColor : root.textColor
+            additionalTextColor : root.secondTextColor
             onMaskLoad: (path) => logic.loadMask(path)
             onMaskShow: (show) => logic.showMask(show)
             onMaskInvert: () => logic.invertMask()
@@ -159,6 +166,8 @@ ApplicationWindow {
             mainColor: root.mainColor
             secondColor: root.secondColor
             actionColor: root.actionColor
+            mainTextColor : root.textColor
+            additionalTextColor : root.secondTextColor
             onImageModified: (preview, brightness, contrast, sharpness) => logic.modifyImage(preview, brightness, contrast, sharpness)
         }
     }
